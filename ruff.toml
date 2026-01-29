@@ -1,0 +1,49 @@
+# Ruff configuration for Cross-Stitch Tracker
+
+# Target Python 3.14
+target-version = "py314"
+
+# Set line length
+line-length = 100
+
+# Enable auto-fixing
+fix = true
+
+[lint]
+# Enable recommended rules
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort (import sorting)
+    "N",      # pep8-naming
+    "UP",     # pyupgrade
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "SIM",    # flake8-simplify
+    "RUF",    # Ruff-specific rules
+]
+
+# Ignore specific rules
+ignore = [
+    "E501",   # Line too long (handled by formatter)
+]
+
+# Allow unused variables when prefixed with underscore
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[lint.per-file-ignores]
+# Ignore import organization in __init__.py files
+"__init__.py" = ["F401"]
+# Allow longer lines in migrations or generated files
+"**/migrations/*.py" = ["E501"]
+
+[format]
+# Use double quotes for strings
+quote-style = "double"
+
+# Indent with spaces
+indent-style = "space"
+
+# Respect line endings
+line-ending = "auto"
