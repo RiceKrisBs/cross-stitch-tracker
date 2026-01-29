@@ -1,0 +1,36 @@
+/*
+ * Custom styles for Cross-Stitch Tracker
+ * Built on top of Pico CSS
+ */
+
+/* Add any custom styling here */
+
+/* Example: Add some spacing to navigation */
+nav ul {
+    padding: 0;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}

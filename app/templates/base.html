@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cross-Stitch Tracker{% endblock %}</title>
+
+    <!-- Pico CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+    <!-- htmx -->
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/custom.css') }}">
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header class="container">
+        <nav>
+            <ul>
+                <li><strong>Cross-Stitch Tracker</strong></li>
+            </ul>
+            <ul>
+                {% block nav_items %}
+                <li><a href="/">Home</a></li>
+                {% endblock %}
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="container">
+        <hr>
+        <p><small>&copy; 2026 Cross-Stitch Tracker</small></p>
+    </footer>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
