@@ -8,16 +8,11 @@ from pathlib import Path
 # Add parent directory to path so we can import app modules
 sys.path.append(str(Path(__file__).parent.parent))
 
-import bcrypt
 from sqlmodel import Session, select
 
+from app.auth import hash_password
 from app.database import engine
 from app.models import User
-
-
-def hash_password(password: str) -> str:
-    """Hash a password using bcrypt"""
-    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
 
 
 def seed_users():

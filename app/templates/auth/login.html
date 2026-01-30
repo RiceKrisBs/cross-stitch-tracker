@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Cross-Stitch Tracker{% endblock %}
+
+{% block content %}
+<article>
+    <h1>Login</h1>
+
+    {% if error %}
+    <p style="color: var(--pico-del-color); padding: 1rem; background-color: var(--pico-card-background-color); border-left: 3px solid var(--pico-del-color); margin-bottom: 1rem;">
+        {{ error }}
+    </p>
+    {% endif %}
+
+    <form method="POST" action="/auth/login">
+        <label for="username">
+            Username
+            <input type="text" id="username" name="username" required placeholder="Enter username" value="{{ username or '' }}">
+        </label>
+
+        <label for="password">
+            Password
+            <input type="password" id="password" name="password" required placeholder="Enter password">
+        </label>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>
+        Don't have an account? <a href="/auth/register">Register here</a>
+    </p>
+</article>
+{% endblock %}

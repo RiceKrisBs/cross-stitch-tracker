@@ -7,18 +7,33 @@
     <header>
         <h1>Welcome to Cross-Stitch Tracker</h1>
     </header>
-    <p>Track your cross-stitch projects, floss inventory, and work sessions.</p>
 
-    <section>
-        <h2>Getting Started</h2>
-        <p>This is a placeholder homepage. Features coming soon:</p>
-        <ul>
-            <li>Pattern Management</li>
-            <li>Project Tracking</li>
-            <li>Floss Inventory</li>
-            <li>Session Tracking</li>
-            <li>Shopping Lists</li>
-        </ul>
-    </section>
+    {% if user %}
+        <p>Hello, <strong>{{ user.username }}</strong>!</p>
+        <p>Track your cross-stitch projects, floss inventory, and work sessions.</p>
+
+        <section>
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#">My Projects</a> (coming soon)</li>
+                <li><a href="#">Floss Inventory</a> (coming soon)</li>
+                <li><a href="#">Patterns</a> (coming soon)</li>
+                <li><a href="#">Shopping List</a> (coming soon)</li>
+            </ul>
+        </section>
+
+        <form method="POST" action="/auth/logout">
+            <button type="submit" class="secondary">Logout</button>
+        </form>
+    {% else %}
+        <p>Track your cross-stitch projects, floss inventory, and work sessions.</p>
+
+        <section>
+            <h2>Getting Started</h2>
+            <p>Please log in or register to start tracking your cross-stitch projects.</p>
+            <a href="/auth/login" role="button">Login</a>
+            <a href="/auth/register" role="button" class="secondary">Register</a>
+        </section>
+    {% endif %}
 </article>
 {% endblock %}

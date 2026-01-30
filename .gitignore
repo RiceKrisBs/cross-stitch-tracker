@@ -59,6 +59,7 @@ instance/
 # Planning files (keep local only)
 CLAUDE.md
 plan.md
-implementation-notes.md
-testing-strategy.md
-deployment.md
+
+# Documentation and notes
+docs/
+.notes/

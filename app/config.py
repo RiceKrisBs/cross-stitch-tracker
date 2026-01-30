@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 60 * 24 * 7  # 7 days
 
+    # Cookie security - secure flag should be True in production (HTTPS only)
+    cookie_secure: bool = False  # Set to True in production with HTTPS
+
     # Email (for future password reset feature)
     email_enabled: bool = False
     smtp_host: str | None = None
